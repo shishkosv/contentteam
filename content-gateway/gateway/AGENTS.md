@@ -26,6 +26,14 @@ This gateway is dedicated to a content production team.
 - GitHub Issues = task records
 - GitHub Projects = workflow visibility and board state
 
+## GitHub Issue Creation
+
+- `manager` may create GitHub Issues for content tasks.
+- Use the shared issue template and labels.
+- Check for duplicates before creating a new issue.
+- Write the issue number and URL back to the task record.
+- If GitHub auth or repo access fails, block and escalate.
+
 ## Lifecycle
 
 - new
