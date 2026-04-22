@@ -1,0 +1,145 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/home/sergiy_shyshko/.openclaw-content/content-gateway/gateway",
+      "models": {
+        "openai-codex/gpt-5.4": {}
+      },
+      "model": {
+        "primary": "openai-codex/gpt-5.4"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    },
+    "list": [
+      {
+        "id": "manager",
+        "workspace": "/home/sergiy_shyshko/.openclaw-content/workspaces/manager"
+      },
+      {
+        "id": "creator",
+        "workspace": "/home/sergiy_shyshko/.openclaw-content/workspaces/creator"
+      },
+      {
+        "id": "publisher",
+        "workspace": "/home/sergiy_shyshko/.openclaw-content/workspaces/publisher"
+      }
+    ]
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "a4b65768fe0fbd0f03c15bd24abdd95fb5b1465364e322b2"
+    },
+    "port": 18889,
+    "bind": "loopback",
+    "tools": {
+      "allow": [
+        "sessions_send",
+        "sessions_list"
+      ]
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "controlUi": {
+      "allowInsecureAuth": false
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {
+    "profile": "coding",
+    "sessions": {
+      "visibility": "all"
+    },
+    "agentToAgent": {
+      "enabled": true,
+      "allow": [
+        "manager",
+        "creator",
+        "publisher"
+      ]
+    }
+  },
+  "auth": {
+    "profiles": {
+      "openai-codex:shishkosv@gmail.com": {
+        "provider": "openai-codex",
+        "mode": "oauth",
+        "email": "shishkosv@gmail.com"
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "defaultAccount": "manager",
+      "dmPolicy": "pairing",
+      "groupPolicy": "allowlist",
+      "accounts": {
+        "manager": {
+          "botToken": "8653102289:AAEnjMENRMsDiQB9x9_zzgQIBz9zAOWnEcA",
+          "dmPolicy": "pairing",
+          "groupPolicy": "open",
+          "groups": {
+            "*": {
+              "requireMention": false
+            }
+          }
+        },
+        "creator": {
+          "botToken": "8595929698:AAHTX5yqyax4fJmbA0DgiACzwhxDn5SFvsA",
+          "dmPolicy": "pairing",
+          "groupPolicy": "allowlist",
+          "groups": {
+            "*": {
+              "requireMention": true
+            }
+          }
+        },
+        "publisher": {
+          "botToken": "8678042336:AAGQo5Hu_R0_sSf6MNwu82Bnwh0FEBcga1Y",
+          "dmPolicy": "pairing",
+          "groupPolicy": "allowlist",
+          "groups": {
+            "*": {
+              "requireMention": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "bindings": [
+    {
+      "type": "route",
+      "agentId": "manager",
+      "match": {
+        "channel": "telegram",
+        "accountId": "manager"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "creator",
+      "match": {
+        "channel": "telegram",
+        "accountId": "creator"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "publisher",
+      "match": {
+        "channel": "telegram",
+        "accountId": "publisher"
+      }
+    }
+  ]
+}
