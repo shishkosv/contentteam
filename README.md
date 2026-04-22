@@ -31,3 +31,16 @@ Content management team gateway setup for OpenClaw.
 ```bash
 openclaw gateway start --config /home/sergiy_shyshko/.openclaw-content/openclaw.content.json
 ```
+
+## Model tiers
+
+- manager: openai-codex/gpt-5.4
+- creator: openai-codex/gpt-5.4-mini
+- publisher: openai-codex/gpt-5.4-nano
+
+## Runtime note
+
+- content gateway runs separately on port 18889
+- human-facing traffic defaults to manager
+- creator requires mention in group chat
+- publisher only executes approved publishing tasks
