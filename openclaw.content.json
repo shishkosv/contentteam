@@ -32,7 +32,7 @@
     "mode": "local",
     "auth": {
       "mode": "token",
-      "token": "a4b65768fe0fbd0f03c15bd24abdd95fb5b1465364e322b2"
+      "token": "REPLACE_WITH_PRIVATE_GATEWAY_TOKEN"
     },
     "port": 18889,
     "bind": "loopback",
@@ -84,7 +84,7 @@
       "groupPolicy": "allowlist",
       "accounts": {
         "manager": {
-          "botToken": "8653102289:AAEnjMENRMsDiQB9x9_zzgQIBz9zAOWnEcA",
+          "botToken": "REPLACE_MANAGER_BOT_TOKEN",
           "dmPolicy": "pairing",
           "groupPolicy": "open",
           "groups": {
@@ -94,7 +94,7 @@
           }
         },
         "creator": {
-          "botToken": "8595929698:AAHTX5yqyax4fJmbA0DgiACzwhxDn5SFvsA",
+          "botToken": "REPLACE_CREATOR_BOT_TOKEN",
           "dmPolicy": "pairing",
           "groupPolicy": "allowlist",
           "groups": {
@@ -104,7 +104,7 @@
           }
         },
         "publisher": {
-          "botToken": "8678042336:AAGQo5Hu_R0_sSf6MNwu82Bnwh0FEBcga1Y",
+          "botToken": "REPLACE_PUBLISHER_BOT_TOKEN",
           "dmPolicy": "pairing",
           "groupPolicy": "allowlist",
           "groups": {
