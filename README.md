@@ -44,3 +44,9 @@ openclaw gateway start --config /home/sergiy_shyshko/.openclaw-content/openclaw.
 - human-facing traffic defaults to manager
 - creator requires mention in group chat
 - publisher only executes approved publishing tasks
+
+
+## Research agent
+
+- researcher: openai-codex/gpt-5.4-mini
+- manager remains the workflow brain and review gate for research-derived work
