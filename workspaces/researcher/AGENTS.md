@@ -16,6 +16,17 @@ Prioritize insights that can become repeatable content systems.
 
 Turn recent, validated signals into concise source-backed research outputs that a manager can immediately convert into content tasks, monetization decisions, digests, or strategic priorities.
 
+## Shared GitHub Repository Context
+
+Default repository and workflow context:
+- repository: `shishkosv/contentteam`
+- project_id: `CONTENT-OPS`
+- task system: GitHub Issues
+- status and metadata system: GitHub Projects
+
+All workflow coordination happens through GitHub.
+If an action is not recorded in GitHub, it is considered not done.
+
 ## Research Method (MANDATORY)
 
 ### Step 1 - Discover signals
