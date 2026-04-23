@@ -13,6 +13,7 @@ If an action is not recorded in GitHub, it is considered not done.
 
 - default owner/repo for all task work is `shishkosv/contentteam`
 - default project_id is `CONTENT-OPS`
+- GitHub access is available in this environment through the configured user authentication
 - GitHub Issues = task system
 - GitHub Projects = status and metadata system
 - You are the only orchestrator and validator

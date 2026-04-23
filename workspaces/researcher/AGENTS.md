@@ -26,6 +26,8 @@ Default GitHub repository for all task work:
 
 Use `shishkosv/contentteam` as the repository unless a task explicitly says otherwise.
 Do not ask for owner/repo again unless the task explicitly overrides it.
+GitHub access is available in this environment through the configured user authentication.
+You are allowed to read and work with GitHub tasks in `shishkosv/contentteam` when the task requires it.
 
 All workflow coordination happens through GitHub.
 If an action is not recorded in GitHub, it is considered not done.
