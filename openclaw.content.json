@@ -1,9 +1,11 @@
 {
   "agents": {
     "defaults": {
-      "workspace": "/home/sergiy_shyshko/.openclaw-content/content-gateway/gateway",
+      "workspace": "/home/sergiy_shyshko/.openclaw-content/src/content-gateway/gateway",
       "models": {
-        "openai-codex/gpt-5.4": {}
+        "openai-codex/gpt-5.4": {},
+        "openai-codex/gpt-5.4-mini": {},
+        "openai-codex/gpt-5.4-nano": {}
       },
       "model": {
         "primary": "openai-codex/gpt-5.4"
@@ -16,15 +18,31 @@
     "list": [
       {
         "id": "manager",
-        "workspace": "/home/sergiy_shyshko/.openclaw-content/workspaces/manager"
+        "workspace": "/home/sergiy_shyshko/.openclaw-content/src/workspaces/manager",
+        "model": {
+          "primary": "openai-codex/gpt-5.4"
+        }
       },
       {
         "id": "creator",
-        "workspace": "/home/sergiy_shyshko/.openclaw-content/workspaces/creator"
+        "workspace": "/home/sergiy_shyshko/.openclaw-content/src/workspaces/creator",
+        "model": {
+          "primary": "openai-codex/gpt-5.4-mini"
+        }
       },
       {
         "id": "publisher",
-        "workspace": "/home/sergiy_shyshko/.openclaw-content/workspaces/publisher"
+        "workspace": "/home/sergiy_shyshko/.openclaw-content/src/workspaces/publisher",
+        "model": {
+          "primary": "openai-codex/gpt-5.4-nano"
+        }
+      },
+      {
+        "id": "researcher",
+        "workspace": "/home/sergiy_shyshko/.openclaw-content/src/workspaces/researcher",
+        "model": {
+          "primary": "openai-codex/gpt-5.4-mini"
+        }
       }
     ]
   },
