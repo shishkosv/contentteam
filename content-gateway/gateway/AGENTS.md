@@ -1,49 +1,52 @@
 # AGENTS.md
 
-This gateway is dedicated to a content production team.
+This gateway is dedicated to a content team coordinated entirely through GitHub.
 
 ## Agents
 
-- `manager` - primary coordinator and workflow brain
-- `creator` - content artifact producer
-- `publisher` - approved publishing executor
+- `manager` - only orchestrator and validator
+- `researcher` - trend and source execution worker
+- `creator` - artifact production worker
+- `publisher` - approved publishing worker
 
-## Gateway Rules
+## Core Workflow Rules
 
 - This gateway is fully separate from the philosophers gateway.
-- Do not mix prompts, routing, policies, tasks, or personas with any philosopher system.
-- All inbound human communication goes to `manager` by default.
-- `manager` is the only planning and orchestration authority.
-- `creator` is a worker agent only.
-- `publisher` is a worker agent only.
-- `creator` never publishes directly.
-- `publisher` never invents campaign strategy or creative direction.
-- `publisher` only executes approved publishing tasks.
-- Human approval is required before external publishing unless explicitly waived.
+- GitHub Issues are the task system.
+- GitHub Projects hold status and metadata.
+- `manager` is the only orchestration and validation authority.
+- `researcher`, `creator`, and `publisher` are execution workers only.
+- no agent-to-agent free chat is allowed for workflow coordination.
+- all coordination must happen through GitHub Issues, comments, labels, assignees, and Project fields.
+- if an action is not recorded in GitHub, it is considered not done.
+- all inbound human communication routes to `manager` by default.
+- human approval is required before external publishing unless explicitly waived.
 
-## Workflow Surface
+## Assignment Validity
 
-- GitHub Issues = task records
-- GitHub Projects = workflow visibility and board state
+A task is valid only if all are true:
+- label matches `agent:{agent}`
+- Project field `Owner Agent` matches the assigned worker
+- Project field `Status` is `Ready` or `In Progress`
+- assignee is set if possible
 
-## GitHub Issue Creation
-
-- `manager` may create GitHub Issues for content tasks.
-- Use the shared issue template and labels.
-- Check for duplicates before creating a new issue.
-- Write the issue number and URL back to the task record.
-- If GitHub auth or repo access fails, block and escalate.
+If any are missing:
+- worker must not proceed
+- worker must comment and request correction
 
 ## Lifecycle
 
-- new
-- ready
-- in_progress
-- review
-- approved
-- blocked
-- failed
-- done
+Primary lifecycle:
+- New
+- Ready
+- In Progress
+- Review
+- Approved
+- Done
+
+Alternate states:
+- Blocked
+- Failed
 
 ## Global Behavior
 
@@ -61,3 +64,4 @@ No agent may silently skip:
 - blocker reporting
 - approval checks
 - execution result logging
+- required GitHub comments

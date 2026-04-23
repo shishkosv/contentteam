@@ -1,54 +1,41 @@
 # [TASK] <short title>
 
 ## Task Metadata
-
 - task_id:
 - parent_task_id:
-- project_id: CONTENTTEAM-PROJECT-1
-- project_name: Content Team Operations
-- repository: shishkosv/contentteam
+- project_id: CONTENT-OPS
 - campaign_id:
 - owner_agent:
 - status:
-- priority:
 - task_type:
 - target_channels:
-- approval_status:
 
 ## Objective
-
--
+{{goal}}
 
 ## Inputs
-
--
+{{context}}
 
 ## Acceptance Criteria
+- clear
+- testable
 
-- [ ]
+## Outputs
+{{expected}}
 
-## Expected Outputs
+## Handoff
 
--
+Every worker update must be added as a GitHub comment using:
 
-## Artifact Links
-
-- none yet
-
-## Dependencies
-
-- none
-- related issues:
-- related project item:
-
-## Approval
-
-- default_rule: human approval required before external publishing unless explicitly waived
-- current_state:
-- approved_by:
-- approval_timestamp:
-- waiver_reference:
+### Update
+- task_id:
+- agent:
+- status:
+- done:
+- artifacts:
+- blockers:
+- next_action:
 
 ## Notes
-
--
+- assignee should be set if possible
+- task is valid only when label, Project Owner Agent, and Project Status all match the assigned worker

@@ -2,55 +2,98 @@
 
 ## Current Backend
 
-The current task backend is:
+The task backend is enforced through:
+- GitHub Issues as the task system
+- GitHub Projects as the status and metadata system
 
-- GitHub Issues for task records
-- GitHub Projects for workflow visibility and board state
+## Workflow Authority
 
-## Abstraction Rule
+- `manager` is the only orchestrator and validator
+- workers do execution only
+- no agent-to-agent free chat is valid workflow coordination
+- all coordination must be reflected in GitHub
+- if not recorded in GitHub, it is considered not done
 
-Treat GitHub as the current implementation of task storage and workflow visibility, not as the permanent workflow engine.
+## Required Task Fields
 
-Agents must reason in terms of abstract task concepts:
-
-- task record
-- status
-- owner
-- dependencies
-- approval state
-- artifacts
-- execution log
-- blocker record
-
-Not in terms of GitHub-specific assumptions whenever avoidable.
-
-## Future-Proofing Guidance
-
-When creating or updating tasks, preserve concepts that can map cleanly to another backend later:
-
+Every task must carry, at minimum:
 - `task_id`
+- `owner_agent`
+- `status`
+- `task_type`
+- `target_channels`
+- objective
+- inputs
+- acceptance criteria
+- outputs
+
+Recommended extended fields:
 - `parent_task_id`
 - `project_id`
 - `campaign_id`
-- `owner_agent`
-- `status`
 - `priority`
-- `task_type`
-- `target_channels`
-- `acceptance_criteria`
-- `inputs`
-- `expected_outputs`
 - `artifact_links`
 - `approval_status`
 - `blockers`
 
-## Migration Principle
+## Assignment Validity
 
-If the backend later changes from GitHub to another system, agent behavior should remain stable.
+A task is valid for execution only if all are true:
+- issue label includes `agent:{agent}`
+- Project `Owner Agent` matches
+- Project `Status` is `Ready` or `In Progress`
+- assignee is set if possible
 
-Only the storage adapter and field mapping should need to change.
+If invalid:
+- worker must not proceed
+- worker must comment and request fix
+
+## Project Fields
+
+Required GitHub Project fields:
+- Status
+- Owner Agent
+- Task Type
+- Priority
+- Approval Status
+
+## Status Lifecycle
+
+Primary lifecycle:
+- New
+- Ready
+- In Progress
+- Review
+- Approved
+- Done
+
+Alternate states:
+- Blocked
+- Failed
+
+## Permission Model
+
+### Workers
+May set:
+- In Progress
+- Review
+- Blocked
+- Failed
+
+Must add update comment.
+Cannot set:
+- Approved
+- Done
+
+### Manager
+May set any status.
+Only manager may:
+- approve
+- mark done
+- reassign
+- create downstream tasks
 
 ## Practical Rule
 
-Write task updates so they remain readable and machine-parseable outside GitHub.
-Avoid relying on GitHub-only conventions as the sole source of workflow meaning.
+Write issues and comments so they are concise, readable, and machine-parseable.
+Every meaningful action should have a GitHub trace.

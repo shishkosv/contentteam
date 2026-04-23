@@ -3,48 +3,65 @@
 ## Default Routing
 
 - All inbound human requests route to `manager`.
-- `manager` is the only planning, decomposition, review, approval-gate, and orchestration authority.
-- `creator` and `publisher` are worker agents only.
-- No human request should route directly to `creator` or `publisher` unless `manager` explicitly delegates through a tracked task.
+- `manager` is the only planning, decomposition, review, approval, reassignment, and orchestration authority.
+- `researcher`, `creator`, and `publisher` are worker agents only.
+- No workflow coordination happens through free agent chat.
+- All execution handoff happens through GitHub task assignment and GitHub comments.
 
 ## Routing Rules
 
 - all human requests -> `manager`
 - planning -> `manager`
+- duplicate check -> `manager`
 - task decomposition -> `manager`
-- deduplication against existing work -> `manager`
 - GitHub issue creation/update/assignment -> `manager`
-- creative work -> `creator`
+- trend scans and source research -> `researcher`
 - artifact production -> `creator`
-- caption drafting -> `creator`
-- overlay text creation -> `creator`
-- publishing work -> `publisher`
+- approved publishing execution -> `publisher`
 - blocked tasks -> `manager`
 - review decisions -> `manager`
 - approval decisions -> `manager`
+- downstream task creation -> `manager`
 - retries after publish failure -> `manager`
+
+## Assignment Gate
+
+A worker may proceed only when:
+- `agent:{worker}` label is present
+- Project `Owner Agent` matches the worker
+- Project `Status` is `Ready` or `In Progress`
+- assignee is set if possible
+
+If any requirement is missing:
+- do not proceed
+- add concise comment requesting correction
+- wait for manager fix
 
 ## Hard Boundaries
 
-- `creator` must reject tasks with missing required inputs.
+- `researcher` does trends and sources only.
+- `creator` does artifacts only.
+- `publisher` executes only approved publish tasks.
+- workers may not coordinate workflow by chat.
+- workers may not approve or mark tasks done.
 - `creator` must never publish directly.
 - `publisher` must reject tasks without explicit approval unless the task explicitly states approval is waived.
 - `publisher` must never invent strategy, missing copy, or missing creative direction.
-- `publisher` must never repair incomplete packages by guesswork. Escalate to `manager`.
+- `publisher` must never repair incomplete packages by guesswork.
 
 ## Human Approval Rule
 
 - Default rule: human approval is required before any external publishing.
-- Approval waiver must be explicit in the task record.
+- Approval waiver must be explicit in the task record or project metadata.
 - If approval state is ambiguous, treat as not approved.
 
 ## Lifecycle Routing
 
-- `new` -> `manager` triage
-- `ready` -> assigned worker execution
-- `in_progress` -> assigned owner works
-- `review` -> `manager`
-- `approved` -> `publisher` only if target is publishing and approval is satisfied
-- `blocked` -> `manager`
-- `failed` -> `manager`
-- `done` -> `manager` closes loop
+- `New` -> `manager` triage
+- `Ready` -> assigned worker execution
+- `In Progress` -> assigned owner works
+- `Review` -> `manager`
+- `Approved` -> `publisher` only if target is publishing and approval is satisfied
+- `Blocked` -> `manager`
+- `Failed` -> `manager`
+- `Done` -> `manager` closes loop

@@ -1,3 +1,8 @@
+agent:manager
+agent:researcher
+agent:creator
+agent:publisher
+
 status:new
 status:ready
 status:in-progress
@@ -7,24 +12,18 @@ status:blocked
 status:failed
 status:done
 
-agent:manager
-agent:creator
-agent:publisher
-
-type:plan
+type:trend-scan
+type:content-opportunity
 type:image
-type:overlay
-type:caption
-type:review
 type:publish
-
-channel:telegram
-channel:instagram
-channel:facebook
-
-approval:required
-approval:approved
 
 priority:high
 priority:medium
 priority:low
+
+channel:facebook
+channel:telegram
+channel:instagram
+
+approval:required
+approval:approved
