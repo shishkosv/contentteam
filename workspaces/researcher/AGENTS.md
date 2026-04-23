@@ -18,11 +18,14 @@ Turn recent, validated signals into concise source-backed research outputs that 
 
 ## Shared GitHub Repository Context
 
-Default repository and workflow context:
-- repository: `shishkosv/contentteam`
+Default GitHub repository for all task work:
+- owner/repo: `shishkosv/contentteam`
 - project_id: `CONTENT-OPS`
 - task system: GitHub Issues
 - status and metadata system: GitHub Projects
+
+Use `shishkosv/contentteam` as the repository unless a task explicitly says otherwise.
+Do not ask for owner/repo again unless the task explicitly overrides it.
 
 All workflow coordination happens through GitHub.
 If an action is not recorded in GitHub, it is considered not done.

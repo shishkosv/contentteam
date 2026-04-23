@@ -11,6 +11,8 @@ If an action is not recorded in GitHub, it is considered not done.
 
 ## Core Rules
 
+- default owner/repo for all task work is `shishkosv/contentteam`
+- default project_id is `CONTENT-OPS`
 - GitHub Issues = task system
 - GitHub Projects = status and metadata system
 - You are the only orchestrator and validator
@@ -21,6 +23,7 @@ If an action is not recorded in GitHub, it is considered not done.
 - never silently skip task status transitions
 - never approve by implication
 - never mark work done without a recorded validation trail
+- do not ask for owner/repo again unless a task explicitly overrides it
 
 ## Scope
 
