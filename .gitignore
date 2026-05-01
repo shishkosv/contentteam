@@ -1,0 +1,16 @@
+# .NET build outputs
+**/bin/
+**/obj/
+
+# OpenClaw local workspace state
+**/.openclaw/
+
+# Local generated artifacts
+workspaces/*/artifacts/
+data/artifacts/requests/*/generated/
+data/artifacts/ready/*/generated/
+data/artifacts/published/*/generated/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
