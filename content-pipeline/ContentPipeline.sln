@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E0635D3E-4E55-428A-9D38-213163A524C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentPipeline.Core", "src\ContentPipeline.Core\ContentPipeline.Core.csproj", "{D0183B92-37E7-44E7-98BA-A4DC3B109691}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentPipeline.Orchestration", "src\ContentPipeline.Orchestration\ContentPipeline.Orchestration.csproj", "{9ED22390-63BE-4583-B540-61FC69B09269}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentPipeline.Adapters.OpenClaw", "src\ContentPipeline.Adapters.OpenClaw\ContentPipeline.Adapters.OpenClaw.csproj", "{111ECE00-E013-45AE-B5B1-D889A7428C04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentPipeline.Adapters.Telegram", "src\ContentPipeline.Adapters.Telegram\ContentPipeline.Adapters.Telegram.csproj", "{B5050B3E-E99C-4F44-A05C-521E2EEAE38C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentPipeline.Adapters.GoogleDrive", "src\ContentPipeline.Adapters.GoogleDrive\ContentPipeline.Adapters.GoogleDrive.csproj", "{8E5E9EB9-BF05-4CA8-A22C-9FD325379739}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentPipeline.Adapters.Artifacts", "src\ContentPipeline.Adapters.Artifacts\ContentPipeline.Adapters.Artifacts.csproj", "{169D2498-C48B-47E1-BC58-E77366780CAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentPipeline.Storage", "src\ContentPipeline.Storage\ContentPipeline.Storage.csproj", "{A8FFF526-F84A-48BB-9EB6-188C1F52335F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentPipeline.Tests", "src\ContentPipeline.Tests\ContentPipeline.Tests.csproj", "{395F0CE6-351F-492A-91CF-1C53520F0284}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentPipeline.Bridge", "src\ContentPipeline.Bridge\ContentPipeline.Bridge.csproj", "{FC16AFB2-2C45-439B-A9A0-7BD668F9E70F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0183B92-37E7-44E7-98BA-A4DC3B109691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0183B92-37E7-44E7-98BA-A4DC3B109691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0183B92-37E7-44E7-98BA-A4DC3B109691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0183B92-37E7-44E7-98BA-A4DC3B109691}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ED22390-63BE-4583-B540-61FC69B09269}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ED22390-63BE-4583-B540-61FC69B09269}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ED22390-63BE-4583-B540-61FC69B09269}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ED22390-63BE-4583-B540-61FC69B09269}.Release|Any CPU.Build.0 = Release|Any CPU
+		{111ECE00-E013-45AE-B5B1-D889A7428C04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{111ECE00-E013-45AE-B5B1-D889A7428C04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{111ECE00-E013-45AE-B5B1-D889A7428C04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{111ECE00-E013-45AE-B5B1-D889A7428C04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5050B3E-E99C-4F44-A05C-521E2EEAE38C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5050B3E-E99C-4F44-A05C-521E2EEAE38C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5050B3E-E99C-4F44-A05C-521E2EEAE38C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5050B3E-E99C-4F44-A05C-521E2EEAE38C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E5E9EB9-BF05-4CA8-A22C-9FD325379739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E5E9EB9-BF05-4CA8-A22C-9FD325379739}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E5E9EB9-BF05-4CA8-A22C-9FD325379739}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E5E9EB9-BF05-4CA8-A22C-9FD325379739}.Release|Any CPU.Build.0 = Release|Any CPU
+		{169D2498-C48B-47E1-BC58-E77366780CAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{169D2498-C48B-47E1-BC58-E77366780CAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{169D2498-C48B-47E1-BC58-E77366780CAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{169D2498-C48B-47E1-BC58-E77366780CAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8FFF526-F84A-48BB-9EB6-188C1F52335F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8FFF526-F84A-48BB-9EB6-188C1F52335F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8FFF526-F84A-48BB-9EB6-188C1F52335F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8FFF526-F84A-48BB-9EB6-188C1F52335F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{395F0CE6-351F-492A-91CF-1C53520F0284}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{395F0CE6-351F-492A-91CF-1C53520F0284}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{395F0CE6-351F-492A-91CF-1C53520F0284}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{395F0CE6-351F-492A-91CF-1C53520F0284}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC16AFB2-2C45-439B-A9A0-7BD668F9E70F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC16AFB2-2C45-439B-A9A0-7BD668F9E70F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC16AFB2-2C45-439B-A9A0-7BD668F9E70F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC16AFB2-2C45-439B-A9A0-7BD668F9E70F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D0183B92-37E7-44E7-98BA-A4DC3B109691} = {E0635D3E-4E55-428A-9D38-213163A524C7}
+		{9ED22390-63BE-4583-B540-61FC69B09269} = {E0635D3E-4E55-428A-9D38-213163A524C7}
+		{111ECE00-E013-45AE-B5B1-D889A7428C04} = {E0635D3E-4E55-428A-9D38-213163A524C7}
+		{B5050B3E-E99C-4F44-A05C-521E2EEAE38C} = {E0635D3E-4E55-428A-9D38-213163A524C7}
+		{8E5E9EB9-BF05-4CA8-A22C-9FD325379739} = {E0635D3E-4E55-428A-9D38-213163A524C7}
+		{169D2498-C48B-47E1-BC58-E77366780CAD} = {E0635D3E-4E55-428A-9D38-213163A524C7}
+		{A8FFF526-F84A-48BB-9EB6-188C1F52335F} = {E0635D3E-4E55-428A-9D38-213163A524C7}
+		{395F0CE6-351F-492A-91CF-1C53520F0284} = {E0635D3E-4E55-428A-9D38-213163A524C7}
+		{FC16AFB2-2C45-439B-A9A0-7BD668F9E70F} = {E0635D3E-4E55-428A-9D38-213163A524C7}
+	EndGlobalSection
+EndGlobal

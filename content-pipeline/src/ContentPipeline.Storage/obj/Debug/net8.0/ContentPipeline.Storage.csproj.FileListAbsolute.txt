@@ -1,0 +1,16 @@
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Storage/bin/Debug/net8.0/ContentPipeline.Storage.deps.json
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Storage/bin/Debug/net8.0/ContentPipeline.Storage.dll
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Storage/bin/Debug/net8.0/ContentPipeline.Storage.pdb
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Storage/bin/Debug/net8.0/ContentPipeline.Core.dll
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Storage/bin/Debug/net8.0/ContentPipeline.Core.pdb
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Storage/obj/Debug/net8.0/ContentPipeline.Storage.csproj.AssemblyReference.cache
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Storage/obj/Debug/net8.0/ContentPipeline.Storage.GeneratedMSBuildEditorConfig.editorconfig
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Storage/obj/Debug/net8.0/ContentPipeline.Storage.AssemblyInfoInputs.cache
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Storage/obj/Debug/net8.0/ContentPipeline.Storage.AssemblyInfo.cs
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Storage/obj/Debug/net8.0/ContentPipeline.Storage.csproj.CoreCompileInputs.cache
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Storage/obj/Debug/net8.0/ContentPipeline.Storage.sourcelink.json
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Storage/obj/Debug/net8.0/ContentPipeline.Storage.csproj.CopyComplete
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Storage/obj/Debug/net8.0/ContentPipeline.Storage.dll
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Storage/obj/Debug/net8.0/refint/ContentPipeline.Storage.dll
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Storage/obj/Debug/net8.0/ContentPipeline.Storage.pdb
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Storage/obj/Debug/net8.0/ref/ContentPipeline.Storage.dll

@@ -1,0 +1,71 @@
+You are continuing implementation work inside an existing OpenClaw content-team repository.
+
+Repository / working area:
+- /home/sergiy_shyshko/.openclaw-content/src
+
+Current situation:
+- This repo already contains an OpenClaw content gateway with agents: manager, creator, publisher, researcher.
+- A new design pass has been completed to convert the previous loose multi-agent concept into an OpenClaw-native durable workflow for content publishing.
+- The target system should accept a Telegram request from a human via the manager bot, create image-with-text content, validate it, retry up to 3 times on validation failure, move failed attempts to trash, move approved content to ready, and publish approved content to Telegram via publisher.
+- Google Drive should be used as an external storage surface, but local artifact storage should remain the canonical workflow source of truth.
+- Evaluator should be a new internal-only worker agent.
+
+Artifacts already created in this repo during the previous session:
+1. Architecture spec:
+   - /home/sergiy_shyshko/.openclaw-content/src/design/content-pipeline-architecture.md
+2. Proposed updated config draft:
+   - /home/sergiy_shyshko/.openclaw-content/src/design/openclaw-content-config-v2.json
+3. TaskFlow schema and agent contracts:
+   - /home/sergiy_shyshko/.openclaw-content/src/design/taskflow-schema-and-agent-contracts.md
+
+Important findings from the prior session:
+- Existing live config files contained real Telegram bot tokens and a gateway token. Treat them as exposed and rotate them before deployment.
+- Existing content gateway already has Telegram routing and agent-to-agent enabled.
+- Existing content gateway currently lacks evaluator and a real durable workflow implementation.
+- Existing docs in the repo still reflect GitHub Issues / GitHub Projects as the workflow surface, but the new direction is a TaskFlow-centered content pipeline.
+
+Target architecture summary:
+- manager: intake + orchestration + retries + final status
+- researcher: optional ideation / briefing
+- creator: artifact generation
+- evaluator: quality gate, pass/fail, structured fixes
+- publisher: publish approved artifact only
+- TaskFlow: canonical workflow state and transitions
+- local artifacts: canonical storage
+- Google Drive: synchronized operator-facing storage
+
+What to do next:
+1. Read the three design files listed above.
+2. Inspect current repo layout and identify where implementation code should live.
+3. Create an implementation plan for:
+   - adding evaluator workspace
+   - updating the real content gateway config safely
+   - creating artifact directory conventions
+   - implementing or scaffolding the TaskFlow orchestration layer
+   - defining tool/plugin boundaries for image generation, Drive sync, artifact movement, and Telegram publish
+4. If appropriate, start making code/config/doc changes directly in the repo.
+5. Preserve the design intent:
+   - manager is the only workflow authority
+   - evaluator is separate from creator
+   - retries capped at 3
+   - failed attempts moved to trash
+   - publish failure distinct from validation failure
+   - local storage remains canonical
+
+Constraints and cautions:
+- Do not assume LangGraph should be introduced directly if OpenClaw primitives already cover the orchestration role.
+- Avoid replacing the whole repo with a toy example. Extend what exists.
+- Keep workflow payloads machine-parseable.
+- Do not expose or reuse any old Telegram tokens; use placeholders in committed config.
+- Prefer explicit state transitions over implicit prompt-only coordination.
+
+Good first concrete tasks:
+- add evaluator workspace files
+- draft updated gateway docs from GitHub-task-surface language toward TaskFlow workflow language
+- scaffold a content-pipeline implementation area, for example under src/content-gateway or a plugin directory
+- create artifact root directories and README for storage conventions
+
+Definition of success for this continuation:
+- the repo moves from design docs toward a real implementable OpenClaw-native content publishing service
+- new changes are consistent with the design files above
+- the next human can clearly see what was implemented and what remains

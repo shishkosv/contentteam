@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\ContentPipeline.Core\ContentPipeline.Core.csproj" />
+    <ProjectReference Include="..\ContentPipeline.Orchestration\ContentPipeline.Orchestration.csproj" />
+    <ProjectReference Include="..\ContentPipeline.Storage\ContentPipeline.Storage.csproj" />
+    <ProjectReference Include="..\ContentPipeline.Adapters.OpenClaw\ContentPipeline.Adapters.OpenClaw.csproj" />
+    <ProjectReference Include="..\ContentPipeline.Adapters.Artifacts\ContentPipeline.Adapters.Artifacts.csproj" />
+    <ProjectReference Include="..\ContentPipeline.Adapters.GoogleDrive\ContentPipeline.Adapters.GoogleDrive.csproj" />
+    <ProjectReference Include="..\ContentPipeline.Adapters.Telegram\ContentPipeline.Adapters.Telegram.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

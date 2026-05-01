@@ -1,0 +1,12 @@
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Core/bin/Debug/net8.0/ContentPipeline.Core.deps.json
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Core/bin/Debug/net8.0/ContentPipeline.Core.dll
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Core/bin/Debug/net8.0/ContentPipeline.Core.pdb
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Core/obj/Debug/net8.0/ContentPipeline.Core.GeneratedMSBuildEditorConfig.editorconfig
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Core/obj/Debug/net8.0/ContentPipeline.Core.AssemblyInfoInputs.cache
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Core/obj/Debug/net8.0/ContentPipeline.Core.AssemblyInfo.cs
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Core/obj/Debug/net8.0/ContentPipeline.Core.csproj.CoreCompileInputs.cache
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Core/obj/Debug/net8.0/ContentPipeline.Core.sourcelink.json
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Core/obj/Debug/net8.0/ContentPipeline.Core.dll
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Core/obj/Debug/net8.0/refint/ContentPipeline.Core.dll
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Core/obj/Debug/net8.0/ContentPipeline.Core.pdb
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Core/obj/Debug/net8.0/ref/ContentPipeline.Core.dll

@@ -1,0 +1,16 @@
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Orchestration/bin/Debug/net8.0/ContentPipeline.Orchestration.deps.json
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Orchestration/bin/Debug/net8.0/ContentPipeline.Orchestration.dll
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Orchestration/bin/Debug/net8.0/ContentPipeline.Orchestration.pdb
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Orchestration/bin/Debug/net8.0/ContentPipeline.Core.dll
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Orchestration/bin/Debug/net8.0/ContentPipeline.Core.pdb
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Orchestration/obj/Debug/net8.0/ContentPipeline.Orchestration.csproj.AssemblyReference.cache
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Orchestration/obj/Debug/net8.0/ContentPipeline.Orchestration.GeneratedMSBuildEditorConfig.editorconfig
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Orchestration/obj/Debug/net8.0/ContentPipeline.Orchestration.AssemblyInfoInputs.cache
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Orchestration/obj/Debug/net8.0/ContentPipeline.Orchestration.AssemblyInfo.cs
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Orchestration/obj/Debug/net8.0/ContentPipeline.Orchestration.csproj.CoreCompileInputs.cache
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Orchestration/obj/Debug/net8.0/ContentPipeline.Orchestration.sourcelink.json
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Orchestration/obj/Debug/net8.0/ContentPipeline.Orchestration.csproj.CopyComplete
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Orchestration/obj/Debug/net8.0/ContentPipeline.Orchestration.dll
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Orchestration/obj/Debug/net8.0/refint/ContentPipeline.Orchestration.dll
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Orchestration/obj/Debug/net8.0/ContentPipeline.Orchestration.pdb
+/home/sergiy_shyshko/.openclaw-content/src/content-pipeline/src/ContentPipeline.Orchestration/obj/Debug/net8.0/ref/ContentPipeline.Orchestration.dll

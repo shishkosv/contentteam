@@ -1,0 +1,251 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/home/sergiy_shyshko/.openclaw-content/src/content-gateway/gateway",
+      "models": {
+        "openai-codex/gpt-5.4": {},
+        "openai-codex/gpt-5.4-mini": {},
+        "openai-codex/gpt-5.4-nano": {}
+      },
+      "model": {
+        "primary": "openai-codex/gpt-5.4"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    },
+    "list": [
+      {
+        "id": "manager",
+        "workspace": "/home/sergiy_shyshko/.openclaw-content/src/workspaces/manager",
+        "model": {
+          "primary": "openai-codex/gpt-5.4"
+        }
+      },
+      {
+        "id": "researcher",
+        "workspace": "/home/sergiy_shyshko/.openclaw-content/src/workspaces/researcher",
+        "model": {
+          "primary": "openai-codex/gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "creator",
+        "workspace": "/home/sergiy_shyshko/.openclaw-content/src/workspaces/creator",
+        "model": {
+          "primary": "openai-codex/gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "evaluator",
+        "workspace": "/home/sergiy_shyshko/.openclaw-content/src/workspaces/evaluator",
+        "model": {
+          "primary": "openai-codex/gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "publisher",
+        "workspace": "/home/sergiy_shyshko/.openclaw-content/src/workspaces/publisher",
+        "model": {
+          "primary": "openai-codex/gpt-5.4-nano"
+        }
+      }
+    ]
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "REPLACE_ME_ROTATED_GATEWAY_TOKEN"
+    },
+    "port": 18889,
+    "bind": "loopback",
+    "tools": {
+      "allow": [
+        "sessions_send",
+        "sessions_list"
+      ]
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "controlUi": {
+      "allowInsecureAuth": false
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {
+    "profile": "coding",
+    "sessions": {
+      "visibility": "all"
+    },
+    "agentToAgent": {
+      "enabled": true,
+      "allow": [
+        "manager",
+        "researcher",
+        "creator",
+        "evaluator",
+        "publisher"
+      ]
+    }
+  },
+  "auth": {
+    "profiles": {
+      "openai-codex:shishkosv@gmail.com": {
+        "provider": "openai-codex",
+        "mode": "oauth",
+        "email": "shishkosv@gmail.com"
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "defaultAccount": "manager",
+      "dmPolicy": "pairing",
+      "groupPolicy": "allowlist",
+      "accounts": {
+        "manager": {
+          "botToken": "ROTATE_AND_REPLACE_MANAGER_TOKEN",
+          "dmPolicy": "pairing",
+          "groupPolicy": "open",
+          "groups": {
+            "*": {
+              "requireMention": false
+            },
+            "-1003920607244": {
+              "requireMention": false
+            }
+          }
+        },
+        "creator": {
+          "botToken": "ROTATE_AND_REPLACE_CREATOR_TOKEN",
+          "dmPolicy": "pairing",
+          "groupPolicy": "allowlist",
+          "groups": {
+            "*": {
+              "requireMention": true
+            },
+            "-1003920607244": {
+              "requireMention": true
+            }
+          }
+        },
+        "publisher": {
+          "botToken": "ROTATE_AND_REPLACE_PUBLISHER_TOKEN",
+          "dmPolicy": "pairing",
+          "groupPolicy": "allowlist",
+          "groups": {
+            "*": {
+              "requireMention": true
+            },
+            "-1003920607244": {
+              "requireMention": true
+            }
+          }
+        },
+        "researcher": {
+          "botToken": "ROTATE_AND_REPLACE_RESEARCHER_TOKEN_IF_ENABLED",
+          "dmPolicy": "pairing",
+          "groupPolicy": "allowlist",
+          "groups": {
+            "*": {
+              "requireMention": true
+            },
+            "-1003920607244": {
+              "requireMention": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "bindings": [
+    {
+      "type": "route",
+      "agentId": "manager",
+      "match": {
+        "channel": "telegram",
+        "accountId": "manager"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "creator",
+      "match": {
+        "channel": "telegram",
+        "accountId": "creator"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "publisher",
+      "match": {
+        "channel": "telegram",
+        "accountId": "publisher"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "researcher",
+      "match": {
+        "channel": "telegram",
+        "accountId": "researcher"
+      }
+    }
+  ],
+  "plugins": {
+    "entries": {
+      "openai": {
+        "enabled": true
+      },
+      "acpx": {
+        "enabled": true,
+        "config": {
+          "permissionMode": "approve-all",
+          "nonInteractivePermissions": "fail"
+        }
+      },
+      "contentPipeline": {
+        "enabled": false,
+        "config": {
+          "artifactRoot": "/home/sergiy_shyshko/.openclaw-content/data/artifacts",
+          "taskflowControllerId": "content-pipeline/v1",
+          "requireHumanApprovalByDefault": true,
+          "maxCreationAttempts": 3,
+          "channels": {
+            "telegram": {
+              "defaultPublishAccount": "publisher"
+            }
+          },
+          "googleDrive": {
+            "enabled": true,
+            "rootFolder": "OpenClaw Content",
+            "draftsFolder": "Drafts",
+            "trashFolder": "Trash",
+            "readyFolder": "Ready",
+            "publishedFolder": "Published"
+          },
+          "categories": {
+            "default": {
+              "format": "image_text",
+              "requireEvaluation": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "meta": {
+    "notes": [
+      "evaluator is intentionally internal-only and has no public Telegram account in v2",
+      "manager remains the only intended human intake account",
+      "all exposed bot tokens from earlier configs should be rotated before deployment"
+    ]
+  }
+}
