@@ -1,0 +1,211 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/home/sergiy_shyshko/.openclaw-content/src/content-gateway/gateway",
+      "models": {
+        "openai-codex/gpt-5.4": {},
+        "openai-codex/gpt-5.4-mini": {},
+        "openai-codex/gpt-5.4-nano": {}
+      },
+      "model": {
+        "primary": "openai-codex/gpt-5.4"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    },
+    "list": [
+      {
+        "id": "manager",
+        "workspace": "/home/sergiy_shyshko/.openclaw-content/src/workspaces/manager",
+        "model": {
+          "primary": "openai-codex/gpt-5.4"
+        }
+      },
+      {
+        "id": "researcher",
+        "workspace": "/home/sergiy_shyshko/.openclaw-content/src/workspaces/researcher",
+        "model": {
+          "primary": "openai-codex/gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "creator",
+        "workspace": "/home/sergiy_shyshko/.openclaw-content/src/workspaces/creator",
+        "model": {
+          "primary": "openai-codex/gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "publisher",
+        "workspace": "/home/sergiy_shyshko/.openclaw-content/src/workspaces/publisher",
+        "model": {
+          "primary": "openai-codex/gpt-5.4-nano"
+        }
+      }
+    ]
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "<REDACTED_GATEWAY_TOKEN>"
+    },
+    "port": 18889,
+    "bind": "loopback",
+    "tools": {
+      "allow": [
+        "sessions_send",
+        "sessions_list"
+      ]
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "controlUi": {
+      "allowInsecureAuth": false
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {
+    "profile": "coding",
+    "sessions": {
+      "visibility": "all"
+    },
+    "agentToAgent": {
+      "enabled": true,
+      "allow": [
+        "manager",
+        "creator",
+        "publisher"
+      ]
+    }
+  },
+  "auth": {
+    "profiles": {
+      "openai-codex:shishkosv@gmail.com": {
+        "provider": "openai-codex",
+        "mode": "oauth",
+        "email": "shishkosv@gmail.com"
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "defaultAccount": "manager",
+      "dmPolicy": "pairing",
+      "groupPolicy": "allowlist",
+      "accounts": {
+        "manager": {
+          "botToken": "<REDACTED_BOT_TOKEN>",
+          "dmPolicy": "pairing",
+          "groupPolicy": "open",
+          "groups": {
+            "*": {
+              "requireMention": false
+            },
+            "-1003920607244": {
+              "requireMention": false
+            }
+          }
+        },
+        "creator": {
+          "botToken": "<REDACTED_BOT_TOKEN>",
+          "dmPolicy": "pairing",
+          "groupPolicy": "allowlist",
+          "groups": {
+            "*": {
+              "requireMention": true
+            },
+            "-1003920607244": {
+              "requireMention": true
+            }
+          }
+        },
+        "publisher": {
+          "botToken": "<REDACTED_BOT_TOKEN>",
+          "dmPolicy": "pairing",
+          "groupPolicy": "allowlist",
+          "groups": {
+            "*": {
+              "requireMention": true
+            },
+            "-1003920607244": {
+              "requireMention": true
+            }
+          }
+        },
+        "researcher": {
+          "botToken": "<REDACTED_BOT_TOKEN>",
+          "dmPolicy": "pairing",
+          "groupPolicy": "allowlist",
+          "groups": {
+            "*": {
+              "requireMention": true
+            },
+            "-1003920607244": {
+              "requireMention": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "bindings": [
+    {
+      "type": "route",
+      "agentId": "manager",
+      "match": {
+        "channel": "telegram",
+        "accountId": "manager"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "creator",
+      "match": {
+        "channel": "telegram",
+        "accountId": "creator"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "publisher",
+      "match": {
+        "channel": "telegram",
+        "accountId": "publisher"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "researcher",
+      "match": {
+        "channel": "telegram",
+        "accountId": "researcher"
+      }
+    }
+  ],
+  "plugins": {
+    "entries": {
+      "openai": {
+        "enabled": true
+      },
+      "acpx": {
+        "enabled": true,
+        "config": {
+          "permissionMode": "approve-all",
+          "nonInteractivePermissions": "fail"
+        }
+      }
+    }
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.4.15",
+    "lastTouchedAt": "2026-04-22T18:52:58.749Z"
+  }
+}
